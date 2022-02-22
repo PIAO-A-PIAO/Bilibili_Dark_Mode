@@ -1,8 +1,11 @@
-document.querySelector("html").style.filter="invert(1) hue-rotate(180deg)"
+const button = document.querySelector(".button")
+buttonOn = false
 
-
-/*media = document querySelectAll("img, picture, video");
-
-media.forEach((mediaItem) => {
-	mediaItem.style.filter = "invert(1) hue-rotate(180deg)"
-})*/
+button.addEventListener("click", () => {
+	if (!buttonOn){
+		buttonOn = true
+		chrome.tabs.executeScript({
+			file: "Content.js"
+		})
+	}
+})
